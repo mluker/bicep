@@ -17,9 +17,11 @@ var subnets = [
   }
 ]
 
+param loc string = resourceGroup().location
+
 resource virtualNetwork 'Microsoft.Network/virtualNetworks@2019-11-01' = {
   name: 'VNET3'
-  location: resourceGroup().location
+  location: loc
   properties: {
     addressSpace: {
       addressPrefixes: [
